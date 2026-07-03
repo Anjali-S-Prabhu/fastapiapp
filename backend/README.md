@@ -71,3 +71,5 @@
 - Sessionmaker -- To create a session with the database
 - SessionLocal -- To create a session with the database for a single request.
 - declarative_base -- To create a base class for all the models.
+
+
