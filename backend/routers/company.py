@@ -6,7 +6,7 @@ from database import get_db,SessionLocal
 from utils.oauth2 import role_required,get_current_user
 router = APIRouter(prefix="/company",tags=["company"])
 
-@router.post("/",status_code=status.HTTP_201_CREATED,response_model=CompanyResponse)
+@router.post("",status_code=status.HTTP_201_CREATED,response_model=CompanyResponse)
 def create_company(company: CompanyCreate,db:Session=Depends(get_db),current_user=Depends(role_required(["admin"]))):
     db_company=Company(**company.dict())
     db.add(db_company)
@@ -15,7 +15,7 @@ def create_company(company: CompanyCreate,db:Session=Depends(get_db),current_use
     return db_company
 
 
-@router.get("/",status_code=status.HTTP_200_OK,response_model=list[CompanyResponse])
+@router.get("",status_code=status.HTTP_200_OK,response_model=list[CompanyResponse])
 def get_all_company(db:Session=Depends(get_db),current_user=Depends(get_current_user)):
     companies = db.query(Company).all()
     return companies
