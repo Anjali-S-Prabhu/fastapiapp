@@ -1,7 +1,7 @@
 // import Welcome from "./components/Welcome";
 import CompanyCard from "./components/CompanyCard";
 import JobCard from "./components/JobCard";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 
 import { useEffect, useState, useRef, type FormEvent } from "react";
 import { gsap } from "gsap";
@@ -20,8 +20,8 @@ import {
   updateJob,
   deleteJob,
   createJob,
-} from "./Services/jobService";
-import { sendChatMessage } from "./Services/chatService";
+} from "./Services/JobService";
+import { sendChatMessage } from "./Services/ChatService";
 
 import type { Company } from "./types/company";
 import type { Job } from "./types/job";
